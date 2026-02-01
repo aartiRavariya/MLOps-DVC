@@ -32,3 +32,12 @@ dvc will return respective data against the given md5 id.
     "dvc commit" and "dvc push"
 11. git status, add, commit, push
 12. changes in mycode.py, add new row in data, check changes by dvc status
+13. dvc commit and dvc push
+14. git status, add ., commit, push
+15. add one more row in data (data change)
+16. dvc commit, dvc push
+17. git status, add ., commit, push
+
+git log --oneline
+git checkout <hash/sha id> - git checkout master
+dvc pull

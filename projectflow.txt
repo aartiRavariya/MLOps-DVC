@@ -1,3 +1,29 @@
-create git repo and clone it
-create mycode.py and code to it
-Do git add ., commit and push before initializing DVC
+DVC is data version control - for data versioning
+just like GIT which tracks code (we know large data files git doesnt support)
+so to track large data, we use DVC
+
+analogy: Git says for each commit u will have to track corresponding data;
+whenever user fetches any specific code version, the data respective to that code version
+you(dvc) has to return
+
+dvc agrees and does one request, I (dvc) will track all data version, for each data version 
+I (dvc) will generate a md5 id (found in all .dvc file) git has to store/track with its respective
+code version.
+
+so whenever, user fetches any specific code version, it will also get that md5 id,
+dvc will return respective data against the given md5 id.
+
+1. create git repo and clone it
+2. create mycode.py and code to it
+3. Do git add ., commit and push before initializing DVC
+4. pip install dvc
+5. Now type "dvc init" (creates .dvcignore and .dvc)
+6. "mkdir S3" (creates a new S3 dir)
+7. "dvc remote add -d myremote S3" # -d is destination myremote we can put any name, S3 is directory, we can put an AWS S# path as well
+8. "dvc add data/" # wataver (all) files will be now inside data/, dvc will be responsible to track it 
+        OR dvc add data/filename # to track only specific file
+            if error: then write: git rm -r --cached 'data' and git commit -m "stop tracking data"
+            again, dvc add data/ (why error returned, coz the data file was small in size,
+            git was already tracking it. at a time either dvc or git can track it not both.
+            so we removed from git tracking, committed and automatically git puts that in .gitignore
+            to undtrack, and then we get it tracked by DVC)

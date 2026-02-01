@@ -1,0 +1,3 @@
+create git repo and clone it
+create mycode.py and code to it
+Do git add ., commit and push before initializing DVC

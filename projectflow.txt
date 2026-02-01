@@ -27,3 +27,8 @@ dvc will return respective data against the given md5 id.
             git was already tracking it. at a time either dvc or git can track it not both.
             so we removed from git tracking, committed and automatically git puts that in .gitignore
             to undtrack, and then we get it tracked by DVC)
+9. git status, git add ., git commit -m "dvc initiated with data V1", git push origin main
+10. dvc is tracking, but did not push to bucket/ S3 dir. so do
+    "dvc commit" and "dvc push"
+11. git status, add, commit, push
+12. changes in mycode.py, add new row in data, check changes by dvc status
